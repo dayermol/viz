@@ -33,7 +33,7 @@ class Exp:
 			if 'Choose' in self.runTimeVars.values():
 				popupError('Need to choose a value from a dropdown box')
 			else:
-				self.outputFile = open('data/' + self.runTimeVars['subjCode'] + '.txt', 'w')
+				self.outputFile = open('data/' + self.runTimeVars['subjCode'] + '.tsv', 'w')
 				if self.outputFile:
 					break
 
@@ -42,7 +42,7 @@ class Exp:
 
 		generateTrials(self.runTimeVars,runTimeVarsOrder)
 	# 	commented this out 6/29/23
-		(self.header,self.trialInfo) = importTrials('trials/'+self.runTimeVars['subjCode']+'_trials.txt')
+		(self.header,self.trialInfo) = importTrials('trials/'+self.runTimeVars['subjCode']+'_trials.tsv')
 		self.trialInfo = list(self.trialInfo)
 
 		#open the main window
