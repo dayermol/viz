@@ -1,0 +1,5 @@
+block	targetName	targetPic	distractorName	distractorPic
+L	the letter L	L	reish	reish
+L	the letter L	L	inverted reish	invertedReish
+R	the letter reish	reish	L	L
+R	the letter reish	reish	inverted L	invertedL

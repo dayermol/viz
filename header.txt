@@ -1,0 +1,1 @@
+subjCode	instructionsType	lang	showTargetImage	showTargetText	seed	gender	blockOrder	expName	block	targetName	targetPic	distractorName	distractorPic	targetLocation	isPresent	numItems	distractorLocations	response	categoryChosen	exemplarChosen	isRight	rt	
