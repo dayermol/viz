@@ -29,7 +29,7 @@ class Exp:
 
 		while True:
 			runTimeVarsOrder = ['subjCode','instructions', 'lang', 'showTargetImage', 'showTargetText', 'seed','gender','blockOrder']
-			self.runTimeVars = getrunTimeVars({'subjCode':'vsb_101', 'instructions':['image','text'], 'seed':10, 'lang': ['e'], 'showTargetImage':['True','False'],'showTargetText':['True','False'], 'gender':['Choose', 'male','female'], 'blockOrder': ['Choose', 'RL', 'LR']},runTimeVarsOrder,expName)
+			self.runTimeVars = getRunTimeVars({'subjCode':'vsb_101', 'instructions':['image','text'], 'seed':10, 'lang': ['e'], 'showTargetImage':['True','False'],'showTargetText':['True','False'], 'gender':['Choose', 'male','female'], 'blockOrder': ['Choose', 'RL', 'LR']},runTimeVarsOrder,expName)
 			if 'Choose' in self.runTimeVars.values():
 				popupError('Need to choose a value from a dropdown box')
 			else:
