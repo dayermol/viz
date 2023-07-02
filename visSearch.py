@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
-#test
-#test2
+
 from psychopy import core, visual, prefs, event
 import random, sys
 from stimPresPsychoPy_python3 import *
@@ -65,28 +64,28 @@ class Exp:
 		
 		self.instructionsText = {
 				'e': "Thank you for participating!  In this experiment, your job is to search for a target image which you will see on the next screen. On each trial, you will see a display with some letters or letter-like characters. Sometimes the target will be among them. Other times not. If you spot the target, press the 'up' key. If not, press the 'down' key. You should respond as quickly and accurately as you can. If you make a mistake, you will hear a buzzing sound. \n\n The experimenter will go over these instructions with you and then you can begin.",
-				'h': u".אבה ךסמב עיפותש הרטמה תוא תא שפחל איה םכתרטמ"+"\n"+u".תויתוא-ייומד וא תויתוא המכ םע ךסמ וארת בלש לכב"+"\n"+u".אל םימעפלו ןהיניב היהת הרטמה תוא םימעפל"+"\n"+u".'הלעמל' וצחל הרטמה תא םיאור םתא םא"+"\n"+u".'הטמל' וצחל אל םא"+"\n"+u".םכתלוכי לככ קיודמו רהמ ביגהל םכילע"+"\n"+u".שער ועמשת םתא תועט םתישע םא"+"\n\n"+u".ךישמהל ולכות זאו םכתא וללה תוארוהה לע רובעי ןייסנה"
+			#	'h': u".אבה ךסמב עיפותש הרטמה תוא תא שפחל איה םכתרטמ"+"\n"+u".תויתוא-ייומד וא תויתוא המכ םע ךסמ וארת בלש לכב"+"\n"+u".אל םימעפלו ןהיניב היהת הרטמה תוא םימעפל"+"\n"+u".'הלעמל' וצחל הרטמה תא םיאור םתא םא"+"\n"+u".'הטמל' וצחל אל םא"+"\n"+u".םכתלוכי לככ קיודמו רהמ ביגהל םכילע"+"\n"+u".שער ועמשת םתא תועט םתישע םא"+"\n\n"+u".ךישמהל ולכות זאו םכתא וללה תוארוהה לע רובעי ןייסנה"
 				}
 		self.practiceTrials = {
 				'e': "We will begin with some practice trials. Press enter to continue.",
-				'h': u".ןומיא יבלש המכ םע ליחתנ"+"\n"+u"וצחל אנ"+"\n"+"ENTER"+"\n"+u".ךישמהל ידכ"
+			#	'h': u".ןומיא יבלש המכ םע ליחתנ"+"\n"+u"וצחל אנ"+"\n"+"ENTER"+"\n"+u".ךישמהל ידכ"
 				}
 		self.realTrials = {
 				'e': "Now we will begin the real experiment. Please let the experimenter know if you have any questions or press enter to continue.",
-				'h': u".יתימאה יוסינה ליחתי וישכע"+"\n"+u"וצחל וא תופסונ תולאש םכל שי םא ןייסנל ועידוה אנא"+"\n"+"ENTER"+"\n"+u".ךישמהל ידכ" 
+			#	'h': u".יתימאה יוסינה ליחתי וישכע"+"\n"+u"וצחל וא תופסונ תולאש םכל שי םא ןייסנל ועידוה אנא"+"\n"+"ENTER"+"\n"+u".ךישמהל ידכ" 
 				}
 
 		self.takeBreak = {
 				'e': "Please take a short break.  Press enter when you are ready to continue.",
-				'h': u".הרצק הקספה וחק אנא"+"\n"+u"וצחל ךישמהל םינכומ םתאשכ"+"\n"+"ENTER."
+			#	'h': u".הרצק הקספה וחק אנא"+"\n"+u"וצחל ךישמהל םינכומ םתאשכ"+"\n"+"ENTER."
 				}
 		self.thanksText = {
 				'e': "Thank you for participating! Please press enter to begin a short questionnaire.",
-				'h': u"!םכתופתתשה לע הבר הדות"+"\n"+u"וצחל אנא"+"\n"+"ENTER"+"\n"+u".רצק ןולאש ליחתהל ידכב"
+			#	'h': u"!םכתופתתשה לע הבר הדות"+"\n"+u"וצחל אנא"+"\n"+"ENTER"+"\n"+u".רצק ןולאש ליחתהל ידכב"
 				}
 		self.surveyURL = {
 				'e' : "https://docs.google.com/forms/d/e/1FAIpQLScotg-r5Gd67RZHURBC8cYeCohkbWGxfzHsbqL9C4aTYrnylg/viewform",
-				'h':  u"https://docs.google.com/forms/d/e/1FAIpQLScotg-r5Gd67RZHURBC8cYeCohkbWGxfzHsbqL9C4aTYrnylg/viewform"
+			#	'h':  u"https://docs.google.com/forms/d/e/1FAIpQLScotg-r5Gd67RZHURBC8cYeCohkbWGxfzHsbqL9C4aTYrnylg/viewform"
 				}
 		self.surveyURL[self.runTimeVars['lang']] += '?entry.900342216=%s&entry.142747125=%s' % (self.runTimeVars['subjCode'], self.runTimeVars['room'])
 
