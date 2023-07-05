@@ -199,9 +199,22 @@ class TLTask(template.BaseExperiment):
         self.data_directory = data_directory
         self.questionaire_dict = questionaire_dict
 
-        self.T_stim_path = os.path.join(stim_path, 'T.png')
-        self.L1_stim_path = os.path.join(stim_path, 'L1.png')
-        self.L2_stim_path = os.path.join(stim_path, 'L2.png')
+        self.BF1A_stim_path = os.path.join(stim_path, 'BF1A.jpg')
+        self.BF1H_stim_path = os.path.join(stim_path, 'BF1H.jpg')
+        self.BF2A_stim_path = os.path.join(stim_path, 'BF2A.jpg')
+        self.BF2H_stim_path = os.path.join(stim_path, 'BF2H.jpg')
+        self.BM1A_stim_path = os.path.join(stim_path, 'BM1A.jpg')
+        self.BM1H_stim_path = os.path.join(stim_path, 'BM1H.jpg')
+        self.BM2A_stim_path = os.path.join(stim_path, 'BM2A.jpg')
+        self.BM2H_stim_path = os.path.join(stim_path, 'BM2H.jpg')
+        self.WF1A_stim_path = os.path.join(stim_path, 'WF1A.jpg')
+        self.WF1A_stim_path = os.path.join(stim_path, 'WF1H.jpg')
+        self.WF2A_stim_path = os.path.join(stim_path, 'WF2A.jpg')
+        self.WF2H_stim_path = os.path.join(stim_path, 'WF2H.jpg')
+        self.WM1A_stim_path = os.path.join(stim_path, 'WM1A.jpg')
+        self.WM1H_stim_path = os.path.join(stim_path, 'WM1H.jpg')
+        self.WM2A_stim_path = os.path.join(stim_path, 'WM2A.jpg')
+        self.WM2H_stim_path = os.path.join(stim_path, 'WM2H.jpg')
 
         self.trials_per_set_size = number_of_trials_per_block / len(set_sizes)
 
@@ -344,8 +357,8 @@ class TLTask(template.BaseExperiment):
         oris = [replacement_orientations[ori] for ori in oris]
         cresp = self.keys[ori_idx[test_location]]
 
-        stims = [random.choice(['L1', 'L2']) for _ in range(set_size)]
-        stims[test_location] = 'T'
+        stims = [random.choice(['BF1A', 'BF1H', 'BF2A', 'BF2H', 'BM1A', 'BM1H', 'BM2A', 'BM2H', 'WF1A', 'WF1H', 'WF2A', 'WF2H', 'WM1A', 'WM1H', 'WM2A', 'WM2H']) for _ in range(set_size)]
+        stims[test_location] = [random.choice(['BF1A', 'BF1H', 'BF2A', 'BF2H', 'BM1A', 'BM1H', 'BM2A', 'BM2H', 'WF1A', 'WF1H', 'WF2A', 'WF2H', 'WM1A', 'WM1H', 'WM2A', 'WM2H'])]
 
         trial = {
             'set_size': set_size,
@@ -386,12 +399,12 @@ class TLTask(template.BaseExperiment):
         stimuli -- A list of "T", "L1" and "L2" describing which image file to load
         """
         for pos, ori, stim in zip(coordinates, rotations, stimuli):
-            if stim == "T":
-                path = self.T_stim_path
-            elif stim == "L1":
-                path = self.L1_stim_path
+            if stim == "BF1A":
+                path = self.BF1A_stim_path
+            elif stim == "BF1H":
+                path = self.BF1H_stim_path
             else:
-                path = self.L2_stim_path
+                path = self.BF2A_stim_path
 
             psychopy.visual.ImageStim(self.experiment_window, image=path, pos=pos, ori=ori,
                                       size=self.stim_size).draw()
