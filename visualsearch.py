@@ -44,9 +44,9 @@ set_sizes = [2, 6, 10, 14, 18]
 
 instruct_text = [
     ('Welcome to the experiment. Press space to begin.'),
-    ('In this experiment you will be searching for "T"s.\n\n'
-     'On each trial, multiple items will appear.\n\n'
-     'One will be a "T" and the others will be offset "L"s.\n\n'
+    ('In this experiment you will see a set of faces and will be asked yes/no questions.\n\n'
+     'You will first see a target face and then an array of faces.\n\n'
+     'After seeing the array of faces, you will be asked whether \n\n'
      'The "T" can appear in any orientation.\n\n'
      'Once you find the "T", press the arrow key associated with the top of the "T".\n\n'
      'For example, if the "T" looks normal, you would press the up arrow key.\n\n'
@@ -60,7 +60,8 @@ data_directory = os.path.join(os.getcwd(), 'data')
 stim_path = os.path.join(os.getcwd(), 'stimuli/visual')
 
 # Things you probably don't need to change, but can if you want to
-stim_size = 1  # visual degrees, used for X and Y
+stim_size = 1.5 # visual degrees, used for X and Y
+#originally size 1, changed to 1.5, 7/6/23
 
 possible_orientations = ['left', 'up', 'right', 'down']
 keys = ['left', 'up', 'right', 'down']  # keys indexes should match with possible_orientations
@@ -379,6 +380,14 @@ class TLTask(template.BaseExperiment):
         time.sleep(2)
         self.display_text_screen(text=break_text, bg_color=[204, 255, 204])
 
+    def post_trial_hook(self, data):
+        """post trial hook w/ yes/no question"""
+
+        break_text = 'Was the target face present? Yes or no'
+        self.display_text_screen(text=break_text, bg_color=[204, 255, 204], wait_for_input=False)
+        time.sleep(2)
+        self.display_text_screen(text=break_text, bg_color=[204, 255, 204])
+
     def display_blank(self, wait_time):
         """Displays a blank screen. A helper function for self.run_trial.
 
@@ -489,7 +498,7 @@ class TLTask(template.BaseExperiment):
         return data
 
     def run(self, setup_hook=None, before_first_trial_hook=None, pre_block_hook=None,
-            pre_trial_hook=None, post_trial_hook=None, post_block_hook=None,
+            pre_trial_hook=None, post_trial_hook=post_trial_hook, post_block_hook=None,
             end_experiment_hook=None):
         """Runs the entire experiment.
 
